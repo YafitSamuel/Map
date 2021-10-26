@@ -65,53 +65,89 @@
 
 // ===========================================================================================================================================================
 
-class Computer {
-  company;
-  model;
-  color;
-  year;
-  constructor(company, model, color, year) {
-    this.company = company;
-    this.model = model;
-    this.color = color;
-    this.year = year;
+// class Computer {
+//   company;
+//   model;
+//   color;
+//   year;
+//   constructor(company, model, color, year) {
+//     this.company = company;
+//     this.model = model;
+//     this.color = color;
+//     this.year = year;
+//   }
+// }
+
+// let computer1 = new Computer("yafit", "lenovo", "red", 1889);
+// let computer2 = new Computer("kern", "dell", "pink", 2000);
+// let computer3 = new Computer("tikva", "hp", "blue", 444);
+// let computer4 = new Computer("eden", "asos", "black", 2222);
+
+// let computerMap = new Map();
+// computerMap.set("lenovo", { computer1 });
+// computerMap.set("dell", { computer2 });
+// computerMap.set("hp", { computer3 });
+
+// compArray = [computer1, computer2, computer3, computer4];
+// compArray.forEach((compItem) => {
+//   computerMap.set(compItem.model, compItem);
+// });
+// console.log(computerMap);
+
+// computerMap.has("key");
+
+// BigInt.onclick = () => {
+//   computerMap.has("lenovo") ? alert("yes lenovo") : alert("no lenovo");
+// };
+
+class Student {
+  firstName;
+  lastName;
+  age;
+  gradsAvr;
+  constructor(firstName, lastName, age, gradsAvr) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.gradsAvr = gradsAvr;
+  }
+ 
+}
+
+let student1 = new Student("yafit", "samuel", 20, 100);
+let student2 = new Student("tikva", "hiilu", "red", 1889);
+let student3 = new Student("kern", "yosef", "pink", 2000);
+
+let array = [student1, student2, student3];
+let students = new Map([]);
+
+array.forEach((item) => {
+  students.set(item.firstName, item);
+  div1.innerHTML += `<div class="divStayle" id="${item.firstName}"> ${item.firstName}</div>`;
+});
+console.log(students);
+
+
+
+let divStayle = document.getElementsByClassName("divStayle");
+
+
+for (let i = 0; i < divStayle.length; i++) {
+  divStayle[i].onmouseover = () => {
+    divStayle[i].style.width="200px" 
+    divStayle[i].style.height="200px" 
+
+    console.log(students.get( divStayle[i].id));
+    divStayle[i].innerText +=  students.get( divStayle[i].id).lastName
+   
+  };
+  divStayle[i].onmouseout=()=>{
+    divStayle[i].innerText = divStayle[i].id
+    divStayle[i].style.width="" 
+    divStayle[i].style.height="" 
   }
 }
 
-let computer1 = new Computer("yafit", "lenovo", "red", 1889);
-let computer2 = new Computer("kern", "dell", "pink", 2000);
-let computer3 = new Computer("tikva", "hp", "blue", 444);
-let computer4 = new Computer("eden", "asos", "black", 2222);
-
-let computerMap = new Map();
-computerMap.set("lenovo", { computer1 });
-computerMap.set("dell", { computer2 });
-computerMap.set("hp", { computer3 });
-
-compArray = [computer1, computer2, computer3, computer4];
-compArray.forEach((compItem) => {
-  computerMap.set(compItem.model, compItem);
-});
-console.log(computerMap);
-
-computerMap.has("key");
-
-BigInt.onclick=()=>{
-    computerMap.has("lenovo")?alert("yes lenovo"):alert("no lenovo")
-}
 
 
-
-
-// class Student {
-//   firstName;
-//   lastName;
-//   age;
-//   Scores
-//   constructor(firstName, lastName, age, Scores){
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-//     this.age = age;
-//     this.Scores = Scores;
-//   }
-// }
+     
